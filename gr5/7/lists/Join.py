@@ -1,0 +1,12 @@
+s = ['Тот', 'Кого', 'Нельзя', 'Называть']
+print(''.join(s))
+print(' '.join(s))
+print('-'.join(s))
+print('🧁'.join(s))
+print('🥚'.join(s))
+stroka = '🧁'.join(s)
+print(stroka)
+list_1 = list(stroka)
+print(list_1)
+list_2 = stroka.split('🧁')
+print(list_2)
