@@ -1,23 +1,23 @@
 from tkinter import *
-from tkinter import ttk
-
+root = Tk()
 win = Tk()
-win.title('X & O game')
-win.geometry("500x350")
-x = True
-def CX():
-    if btn == True:
-        btn[""] = "X" 
-        x = False
+ 
+def change(event):
+    global X
+    if X == True:
+        b['fg'] = "red"
+        b['activeforeground'] = "red"
+        X = False
+        win.mainloop()
     else:
-        btn[""] = "O"
-        x = True
-    return x
-for c in range(3): win.columnconfigure(index=c, weight=1)
-for r in range(3): win.rowconfigure(index=r, weight=1)
-
-for r in range(3):
-    for c in range(3):
-        btn = ttk.Button(text='', command = CX)
-        btn.grid(row=r, column=c, ipadx=6, ipady=6, padx=4, pady=4, sticky=NSEW)
-win.mainloop()
+        b['fg'] = "green"
+        b['activeforeground'] = "red"
+        X = True
+X = True
+for i in range(1,3):
+    b = Button(text='RED', width=10, height=3)
+    b.bind('<Button-1>', change)
+    b.bind('<Return>', change)
+    b.pack()
+ 
+root.mainloop()
